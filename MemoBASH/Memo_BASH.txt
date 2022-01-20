@@ -1,0 +1,60 @@
+MEMO BASH
+
+    • pwd : afficher le répertoire courant
+    • ls : afficher le contenu du répertoire courant
+        ? ls -lahF --color=auto
+          voir alias ll=ls -lahF
+        ? ls -a : afficher tous les fichiers et répertoires cachés
+        ? ls -F : indique le type d’élément
+        ? ls -l : liste détaillée
+        ? ls -h : afficher la taille en Ko, Mo, Go…
+        ? ls -t : trier par date de dernière modification
+    • tree : lister les fichiers sous forme d’arborescence
+        ? tree -a : ajouter les fichiers caché à la liste
+    • cd : changer de répertoire On peut « compléter » un chemin avec TAB
+    • touch : créer un fichier
+    • mkdir : créer un répertoire
+        ? mkdir -p : Il sert à créer tous les répertoires intermédiaires
+        ? mkdir -p animaux/vertebres/chat : Créer 3 répertoires
+    • cat : Lire un fichier
+        ? cat -n : afficher des numéros de ligne
+        ? cat -A : lire le fichier et afficher les caractères invisibles
+
+    • less : lire un fichier page à page
+    • cp : copier un fichier
+    • cp -R : copier un répertoire
+    • mv : déplacer ou renommer
+      Pas de distinction entre les fichiers et les répertoire, ça marche pour les 2
+    • rm : supprimer un fichier
+        ? rm -i : demander confirmation
+        ? rm -r : supprimer un répertoire
+        ? rm -f : forcer la suppression
+        ? rm -v : mode verbeux
+    • rmdir : éffacer les dossiers vide
+      sudo : passer en mode administrateur de manière permanente
+        ? sudo visudo : éditer /etc/sudoers
+        ? sudo -k : termine une session sudo éventuellement ouverte, cela assure que la prochaine instruction sudo demandera bien un mot de passe.
+        ? sudo -s : ouvre le shell spécifié dans /etc/passwd pour l’utilisateur cible (root par défaut)
+        ? sudo -i : simule un login initial et ouvre le shell spécifié dans /etc/passwd pour l’utilisateur cible (root par défaut). Cela signifie que des fichiers spécifiques tels que .login ou .profile seront lus par le shell ainsi lancé
+        ? sudo -E : préserve l’environnement du shell depuis lequel la commande est lancée
+        ? sudo -u <user> : lancer la commande en tant que l’utilisateur
+        ? sudo -g <group> : lancer la commande avec le groupe bar spécifié (le groupe spécifié est le groupe primaire de l’utilisateur cible indiqué dans /etc/passwd)
+        ? sudo -i -u <user> : permet de se connecter en tant que l’utilisateur toto (ne pas utiliser ces options pour root)
+    • locate <fichier> : rechercher un fichier par son nom
+Gérer l’affichage des informations
+Organiser, traiter et manipuler l’information
+    • grep <expression> <fichier> : rechercher un mot dans un fichier (compatible regex)
+        ? grep -i : respecter la sensibilité de la case
+        ? grep -n : afficher le numéro de ligne
+        ? grep -r : rechercher dans les fichiers du répertoire — rgrep
+        ? grep -E : expression régulières, egrep ou -e ou -P (Perl)
+        ? grep -v : inverser la recherche
+            ? less /etc/apt/sources.list | grep -v "#"
+        ? grep -o : afficher l’expression seule
+        ? grep -w : attraper seulement un mot
+        ? grep -P : utiliser regex perl
+            ? grep '^$' <fichier> : afficher les lignes non-vides
+            ? cat /etc/passwd/ :
+            ? grep -P '10[0-9]{2}' : afficher la liste des utilisateurs créés par root
+        ? history | grep <commande>
+
