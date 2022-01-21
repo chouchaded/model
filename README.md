@@ -1,6 +1,6 @@
 ## Depot Model
 ***
-Liste des Dossier
-* Exercice
+Liste des Dossiers
+* Exercices et Exemples HTML, CSS et JavaScript
 * Memo Bash
 * Memo Git
